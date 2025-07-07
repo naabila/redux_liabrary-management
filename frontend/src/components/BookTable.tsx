@@ -41,7 +41,7 @@ const BookTable = ({ books, page, limit }: BookTableProps) => {
           </tr>
         </thead>
         <tbody>
-          {books.map((book) => (
+          {books?.map((book) => (
             <tr key={book._id} className="border-t">
               <td className="p-2">
                 <Link to={`/books/${book._id}`} className="text-blue-600 hover:underline">

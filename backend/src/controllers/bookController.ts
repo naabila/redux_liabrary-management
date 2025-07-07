@@ -1,6 +1,7 @@
 // src/controllers/bookController.ts
 
 import { Request, Response, NextFunction } from 'express';
+import Book from '../models/book'; // Make sure this path is correct
 
 export const getBookById = async (
   req: Request,
@@ -60,8 +61,9 @@ export const createBook = async (
   next: NextFunction
 ): Promise<void> => {
   try {
-    // Replace with your logic to create a book
-    res.json({ message: 'Book created' });
+    const newBook = new Book(req.body);
+    const savedBook = await newBook.save();
+    res.status(201).json(savedBook);
   } catch (error) {
     next(error);
   }
