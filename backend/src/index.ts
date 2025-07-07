@@ -5,7 +5,7 @@ import dotenv from 'dotenv';
 import bookRoutes from './routes/bookRoutes';
 import borrowRoutes from './routes/borrowRoutes';
 import errorHandler from './middleware/errorHandler';
-import { connectDB } from './config/db';
+import connectDB  from './config/db';
 
 dotenv.config();
 const app = express();
