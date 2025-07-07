@@ -3,10 +3,10 @@ import { getBooks, getBookById, createBook, updateBook, deleteBook } from '../co
 
 const router = Router();
 
-// GET /api/books - List all books with pagination
+//get books
 router.get('/', getBooks);
 
-// GET /api/books/:id - Get a single book by ID
+// get books by id
 router.get('/:id', getBookById);
 
 // POST /api/books - Create a new book
